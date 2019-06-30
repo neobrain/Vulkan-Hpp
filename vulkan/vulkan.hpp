@@ -243,67 +243,67 @@ namespace VULKAN_HPP_NAMESPACE
     {
     }
 
-    Flags(BitType bit)
+    VULKAN_HPP_CONSTEXPR Flags(BitType bit)
       : m_mask(static_cast<MaskType>(bit))
     {
     }
 
-    Flags(Flags<BitType> const& rhs)
+    VULKAN_HPP_CONSTEXPR Flags(Flags<BitType> const& rhs)
       : m_mask(rhs.m_mask)
     {
     }
 
-    explicit Flags(MaskType flags)
+    VULKAN_HPP_CONSTEXPR explicit Flags(MaskType flags)
       : m_mask(flags)
     {
     }
 
-    Flags<BitType> & operator=(Flags<BitType> const& rhs)
+    VULKAN_HPP_CONSTEXPR Flags<BitType> & operator=(Flags<BitType> const& rhs)
     {
       m_mask = rhs.m_mask;
       return *this;
     }
 
-    Flags<BitType> & operator|=(Flags<BitType> const& rhs)
+    VULKAN_HPP_CONSTEXPR Flags<BitType> & operator|=(Flags<BitType> const& rhs)
     {
       m_mask |= rhs.m_mask;
       return *this;
     }
 
-    Flags<BitType> & operator&=(Flags<BitType> const& rhs)
+    VULKAN_HPP_CONSTEXPR Flags<BitType> & operator&=(Flags<BitType> const& rhs)
     {
       m_mask &= rhs.m_mask;
       return *this;
     }
 
-    Flags<BitType> & operator^=(Flags<BitType> const& rhs)
+    VULKAN_HPP_CONSTEXPR Flags<BitType> & operator^=(Flags<BitType> const& rhs)
     {
       m_mask ^= rhs.m_mask;
       return *this;
     }
 
-    Flags<BitType> operator|(Flags<BitType> const& rhs) const
+    VULKAN_HPP_CONSTEXPR Flags<BitType> operator|(Flags<BitType> const& rhs) const
     {
       Flags<BitType> result(*this);
       result |= rhs;
       return result;
     }
 
-    Flags<BitType> operator&(Flags<BitType> const& rhs) const
+    VULKAN_HPP_CONSTEXPR Flags<BitType> operator&(Flags<BitType> const& rhs) const
     {
       Flags<BitType> result(*this);
       result &= rhs;
       return result;
     }
 
-    Flags<BitType> operator^(Flags<BitType> const& rhs) const
+    VULKAN_HPP_CONSTEXPR Flags<BitType> operator^(Flags<BitType> const& rhs) const
     {
       Flags<BitType> result(*this);
       result ^= rhs;
       return result;
     }
 
-    bool operator!() const
+    VULKAN_HPP_CONSTEXPR bool operator!() const
     {
       return !m_mask;
     }
@@ -315,22 +315,22 @@ namespace VULKAN_HPP_NAMESPACE
       return result;
     }
 
-    bool operator==(Flags<BitType> const& rhs) const
+    VULKAN_HPP_CONSTEXPR bool operator==(Flags<BitType> const& rhs) const
     {
       return m_mask == rhs.m_mask;
     }
 
-    bool operator!=(Flags<BitType> const& rhs) const
+    VULKAN_HPP_CONSTEXPR bool operator!=(Flags<BitType> const& rhs) const
     {
       return m_mask != rhs.m_mask;
     }
 
-    explicit operator bool() const
+    VULKAN_HPP_CONSTEXPR explicit operator bool() const
     {
       return !!m_mask;
     }
 
-    explicit operator MaskType() const
+    VULKAN_HPP_CONSTEXPR explicit operator MaskType() const
     {
         return m_mask;
     }
@@ -340,19 +340,19 @@ namespace VULKAN_HPP_NAMESPACE
   };
 
   template <typename BitType>
-  Flags<BitType> operator|(BitType bit, Flags<BitType> const& flags)
+  VULKAN_HPP_CONSTEXPR Flags<BitType> operator|(BitType bit, Flags<BitType> const& flags)
   {
     return flags | bit;
   }
 
   template <typename BitType>
-  Flags<BitType> operator&(BitType bit, Flags<BitType> const& flags)
+  VULKAN_HPP_CONSTEXPR Flags<BitType> operator&(BitType bit, Flags<BitType> const& flags)
   {
     return flags & bit;
   }
 
   template <typename BitType>
-  Flags<BitType> operator^(BitType bit, Flags<BitType> const& flags)
+  VULKAN_HPP_CONSTEXPR Flags<BitType> operator^(BitType bit, Flags<BitType> const& flags)
   {
     return flags ^ bit;
   }
@@ -5850,7 +5850,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using AccessFlags = Flags<AccessFlagBits, VkAccessFlags>;
 
-  VULKAN_HPP_INLINE AccessFlags operator|( AccessFlagBits bit0, AccessFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR AccessFlags operator|( AccessFlagBits bit0, AccessFlagBits bit1 )
   {
     return AccessFlags( bit0 ) | bit1;
   }
@@ -5937,7 +5937,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using AttachmentDescriptionFlags = Flags<AttachmentDescriptionFlagBits, VkAttachmentDescriptionFlags>;
 
-  VULKAN_HPP_INLINE AttachmentDescriptionFlags operator|( AttachmentDescriptionFlagBits bit0, AttachmentDescriptionFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR AttachmentDescriptionFlags operator|( AttachmentDescriptionFlagBits bit0, AttachmentDescriptionFlagBits bit1 )
   {
     return AttachmentDescriptionFlags( bit0 ) | bit1;
   }
@@ -5988,7 +5988,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using BufferCreateFlags = Flags<BufferCreateFlagBits, VkBufferCreateFlags>;
 
-  VULKAN_HPP_INLINE BufferCreateFlags operator|( BufferCreateFlagBits bit0, BufferCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR BufferCreateFlags operator|( BufferCreateFlagBits bit0, BufferCreateFlagBits bit1 )
   {
     return BufferCreateFlags( bit0 ) | bit1;
   }
@@ -6061,7 +6061,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using BufferUsageFlags = Flags<BufferUsageFlagBits, VkBufferUsageFlags>;
 
-  VULKAN_HPP_INLINE BufferUsageFlags operator|( BufferUsageFlagBits bit0, BufferUsageFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR BufferUsageFlags operator|( BufferUsageFlagBits bit0, BufferUsageFlagBits bit1 )
   {
     return BufferUsageFlags( bit0 ) | bit1;
   }
@@ -6140,7 +6140,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using BuildAccelerationStructureFlagsNV = Flags<BuildAccelerationStructureFlagBitsNV, VkBuildAccelerationStructureFlagsNV>;
 
-  VULKAN_HPP_INLINE BuildAccelerationStructureFlagsNV operator|( BuildAccelerationStructureFlagBitsNV bit0, BuildAccelerationStructureFlagBitsNV bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR BuildAccelerationStructureFlagsNV operator|( BuildAccelerationStructureFlagBitsNV bit0, BuildAccelerationStructureFlagBitsNV bit1 )
   {
     return BuildAccelerationStructureFlagsNV( bit0 ) | bit1;
   }
@@ -6193,7 +6193,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ColorComponentFlags = Flags<ColorComponentFlagBits, VkColorComponentFlags>;
 
-  VULKAN_HPP_INLINE ColorComponentFlags operator|( ColorComponentFlagBits bit0, ColorComponentFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ColorComponentFlags operator|( ColorComponentFlagBits bit0, ColorComponentFlagBits bit1 )
   {
     return ColorComponentFlags( bit0 ) | bit1;
   }
@@ -6239,7 +6239,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using CommandBufferResetFlags = Flags<CommandBufferResetFlagBits, VkCommandBufferResetFlags>;
 
-  VULKAN_HPP_INLINE CommandBufferResetFlags operator|( CommandBufferResetFlagBits bit0, CommandBufferResetFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR CommandBufferResetFlags operator|( CommandBufferResetFlagBits bit0, CommandBufferResetFlagBits bit1 )
   {
     return CommandBufferResetFlags( bit0 ) | bit1;
   }
@@ -6286,7 +6286,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using CommandBufferUsageFlags = Flags<CommandBufferUsageFlagBits, VkCommandBufferUsageFlags>;
 
-  VULKAN_HPP_INLINE CommandBufferUsageFlags operator|( CommandBufferUsageFlagBits bit0, CommandBufferUsageFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR CommandBufferUsageFlags operator|( CommandBufferUsageFlagBits bit0, CommandBufferUsageFlagBits bit1 )
   {
     return CommandBufferUsageFlags( bit0 ) | bit1;
   }
@@ -6335,7 +6335,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using CommandPoolCreateFlags = Flags<CommandPoolCreateFlagBits, VkCommandPoolCreateFlags>;
 
-  VULKAN_HPP_INLINE CommandPoolCreateFlags operator|( CommandPoolCreateFlagBits bit0, CommandPoolCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR CommandPoolCreateFlags operator|( CommandPoolCreateFlagBits bit0, CommandPoolCreateFlagBits bit1 )
   {
     return CommandPoolCreateFlags( bit0 ) | bit1;
   }
@@ -6380,7 +6380,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using CommandPoolResetFlags = Flags<CommandPoolResetFlagBits, VkCommandPoolResetFlags>;
 
-  VULKAN_HPP_INLINE CommandPoolResetFlags operator|( CommandPoolResetFlagBits bit0, CommandPoolResetFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR CommandPoolResetFlags operator|( CommandPoolResetFlagBits bit0, CommandPoolResetFlagBits bit1 )
   {
     return CommandPoolResetFlags( bit0 ) | bit1;
   }
@@ -6446,7 +6446,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using CompositeAlphaFlagsKHR = Flags<CompositeAlphaFlagBitsKHR, VkCompositeAlphaFlagsKHR>;
 
-  VULKAN_HPP_INLINE CompositeAlphaFlagsKHR operator|( CompositeAlphaFlagBitsKHR bit0, CompositeAlphaFlagBitsKHR bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR CompositeAlphaFlagsKHR operator|( CompositeAlphaFlagBitsKHR bit0, CompositeAlphaFlagBitsKHR bit1 )
   {
     return CompositeAlphaFlagsKHR( bit0 ) | bit1;
   }
@@ -6492,7 +6492,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ConditionalRenderingFlagsEXT = Flags<ConditionalRenderingFlagBitsEXT, VkConditionalRenderingFlagsEXT>;
 
-  VULKAN_HPP_INLINE ConditionalRenderingFlagsEXT operator|( ConditionalRenderingFlagBitsEXT bit0, ConditionalRenderingFlagBitsEXT bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ConditionalRenderingFlagsEXT operator|( ConditionalRenderingFlagBitsEXT bit0, ConditionalRenderingFlagBitsEXT bit1 )
   {
     return ConditionalRenderingFlagsEXT( bit0 ) | bit1;
   }
@@ -6541,7 +6541,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using CullModeFlags = Flags<CullModeFlagBits, VkCullModeFlags>;
 
-  VULKAN_HPP_INLINE CullModeFlags operator|( CullModeFlagBits bit0, CullModeFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR CullModeFlags operator|( CullModeFlagBits bit0, CullModeFlagBits bit1 )
   {
     return CullModeFlags( bit0 ) | bit1;
   }
@@ -6595,7 +6595,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DebugReportFlagsEXT = Flags<DebugReportFlagBitsEXT, VkDebugReportFlagsEXT>;
 
-  VULKAN_HPP_INLINE DebugReportFlagsEXT operator|( DebugReportFlagBitsEXT bit0, DebugReportFlagBitsEXT bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DebugReportFlagsEXT operator|( DebugReportFlagBitsEXT bit0, DebugReportFlagBitsEXT bit1 )
   {
     return DebugReportFlagsEXT( bit0 ) | bit1;
   }
@@ -6648,7 +6648,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DebugUtilsMessageSeverityFlagsEXT = Flags<DebugUtilsMessageSeverityFlagBitsEXT, VkDebugUtilsMessageSeverityFlagsEXT>;
 
-  VULKAN_HPP_INLINE DebugUtilsMessageSeverityFlagsEXT operator|( DebugUtilsMessageSeverityFlagBitsEXT bit0, DebugUtilsMessageSeverityFlagBitsEXT bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DebugUtilsMessageSeverityFlagsEXT operator|( DebugUtilsMessageSeverityFlagBitsEXT bit0, DebugUtilsMessageSeverityFlagBitsEXT bit1 )
   {
     return DebugUtilsMessageSeverityFlagsEXT( bit0 ) | bit1;
   }
@@ -6698,7 +6698,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DebugUtilsMessageTypeFlagsEXT = Flags<DebugUtilsMessageTypeFlagBitsEXT, VkDebugUtilsMessageTypeFlagsEXT>;
 
-  VULKAN_HPP_INLINE DebugUtilsMessageTypeFlagsEXT operator|( DebugUtilsMessageTypeFlagBitsEXT bit0, DebugUtilsMessageTypeFlagBitsEXT bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DebugUtilsMessageTypeFlagsEXT operator|( DebugUtilsMessageTypeFlagBitsEXT bit0, DebugUtilsMessageTypeFlagBitsEXT bit1 )
   {
     return DebugUtilsMessageTypeFlagsEXT( bit0 ) | bit1;
   }
@@ -6779,7 +6779,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DependencyFlags = Flags<DependencyFlagBits, VkDependencyFlags>;
 
-  VULKAN_HPP_INLINE DependencyFlags operator|( DependencyFlagBits bit0, DependencyFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DependencyFlags operator|( DependencyFlagBits bit0, DependencyFlagBits bit1 )
   {
     return DependencyFlags( bit0 ) | bit1;
   }
@@ -6830,7 +6830,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DescriptorBindingFlagsEXT = Flags<DescriptorBindingFlagBitsEXT, VkDescriptorBindingFlagsEXT>;
 
-  VULKAN_HPP_INLINE DescriptorBindingFlagsEXT operator|( DescriptorBindingFlagBitsEXT bit0, DescriptorBindingFlagBitsEXT bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DescriptorBindingFlagsEXT operator|( DescriptorBindingFlagBitsEXT bit0, DescriptorBindingFlagBitsEXT bit1 )
   {
     return DescriptorBindingFlagsEXT( bit0 ) | bit1;
   }
@@ -6878,7 +6878,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DescriptorPoolCreateFlags = Flags<DescriptorPoolCreateFlagBits, VkDescriptorPoolCreateFlags>;
 
-  VULKAN_HPP_INLINE DescriptorPoolCreateFlags operator|( DescriptorPoolCreateFlagBits bit0, DescriptorPoolCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DescriptorPoolCreateFlags operator|( DescriptorPoolCreateFlagBits bit0, DescriptorPoolCreateFlagBits bit1 )
   {
     return DescriptorPoolCreateFlags( bit0 ) | bit1;
   }
@@ -6939,7 +6939,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DescriptorSetLayoutCreateFlags = Flags<DescriptorSetLayoutCreateFlagBits, VkDescriptorSetLayoutCreateFlags>;
 
-  VULKAN_HPP_INLINE DescriptorSetLayoutCreateFlags operator|( DescriptorSetLayoutCreateFlagBits bit0, DescriptorSetLayoutCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DescriptorSetLayoutCreateFlags operator|( DescriptorSetLayoutCreateFlagBits bit0, DescriptorSetLayoutCreateFlagBits bit1 )
   {
     return DescriptorSetLayoutCreateFlags( bit0 ) | bit1;
   }
@@ -7021,7 +7021,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DeviceGroupPresentModeFlagsKHR = Flags<DeviceGroupPresentModeFlagBitsKHR, VkDeviceGroupPresentModeFlagsKHR>;
 
-  VULKAN_HPP_INLINE DeviceGroupPresentModeFlagsKHR operator|( DeviceGroupPresentModeFlagBitsKHR bit0, DeviceGroupPresentModeFlagBitsKHR bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DeviceGroupPresentModeFlagsKHR operator|( DeviceGroupPresentModeFlagBitsKHR bit0, DeviceGroupPresentModeFlagBitsKHR bit1 )
   {
     return DeviceGroupPresentModeFlagsKHR( bit0 ) | bit1;
   }
@@ -7067,7 +7067,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DeviceQueueCreateFlags = Flags<DeviceQueueCreateFlagBits, VkDeviceQueueCreateFlags>;
 
-  VULKAN_HPP_INLINE DeviceQueueCreateFlags operator|( DeviceQueueCreateFlagBits bit0, DeviceQueueCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DeviceQueueCreateFlags operator|( DeviceQueueCreateFlagBits bit0, DeviceQueueCreateFlagBits bit1 )
   {
     return DeviceQueueCreateFlags( bit0 ) | bit1;
   }
@@ -7131,7 +7131,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using DisplayPlaneAlphaFlagsKHR = Flags<DisplayPlaneAlphaFlagBitsKHR, VkDisplayPlaneAlphaFlagsKHR>;
 
-  VULKAN_HPP_INLINE DisplayPlaneAlphaFlagsKHR operator|( DisplayPlaneAlphaFlagBitsKHR bit0, DisplayPlaneAlphaFlagBitsKHR bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR DisplayPlaneAlphaFlagsKHR operator|( DisplayPlaneAlphaFlagBitsKHR bit0, DisplayPlaneAlphaFlagBitsKHR bit1 )
   {
     return DisplayPlaneAlphaFlagsKHR( bit0 ) | bit1;
   }
@@ -7211,7 +7211,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ExternalFenceFeatureFlags = Flags<ExternalFenceFeatureFlagBits, VkExternalFenceFeatureFlags>;
 
-  VULKAN_HPP_INLINE ExternalFenceFeatureFlags operator|( ExternalFenceFeatureFlagBits bit0, ExternalFenceFeatureFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ExternalFenceFeatureFlags operator|( ExternalFenceFeatureFlagBits bit0, ExternalFenceFeatureFlagBits bit1 )
   {
     return ExternalFenceFeatureFlags( bit0 ) | bit1;
   }
@@ -7267,7 +7267,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ExternalFenceHandleTypeFlags = Flags<ExternalFenceHandleTypeFlagBits, VkExternalFenceHandleTypeFlags>;
 
-  VULKAN_HPP_INLINE ExternalFenceHandleTypeFlags operator|( ExternalFenceHandleTypeFlagBits bit0, ExternalFenceHandleTypeFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ExternalFenceHandleTypeFlags operator|( ExternalFenceHandleTypeFlagBits bit0, ExternalFenceHandleTypeFlagBits bit1 )
   {
     return ExternalFenceHandleTypeFlags( bit0 ) | bit1;
   }
@@ -7322,7 +7322,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ExternalMemoryFeatureFlags = Flags<ExternalMemoryFeatureFlagBits, VkExternalMemoryFeatureFlags>;
 
-  VULKAN_HPP_INLINE ExternalMemoryFeatureFlags operator|( ExternalMemoryFeatureFlagBits bit0, ExternalMemoryFeatureFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ExternalMemoryFeatureFlags operator|( ExternalMemoryFeatureFlagBits bit0, ExternalMemoryFeatureFlagBits bit1 )
   {
     return ExternalMemoryFeatureFlags( bit0 ) | bit1;
   }
@@ -7373,7 +7373,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ExternalMemoryFeatureFlagsNV = Flags<ExternalMemoryFeatureFlagBitsNV, VkExternalMemoryFeatureFlagsNV>;
 
-  VULKAN_HPP_INLINE ExternalMemoryFeatureFlagsNV operator|( ExternalMemoryFeatureFlagBitsNV bit0, ExternalMemoryFeatureFlagBitsNV bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ExternalMemoryFeatureFlagsNV operator|( ExternalMemoryFeatureFlagBitsNV bit0, ExternalMemoryFeatureFlagBitsNV bit1 )
   {
     return ExternalMemoryFeatureFlagsNV( bit0 ) | bit1;
   }
@@ -7445,7 +7445,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ExternalMemoryHandleTypeFlags = Flags<ExternalMemoryHandleTypeFlagBits, VkExternalMemoryHandleTypeFlags>;
 
-  VULKAN_HPP_INLINE ExternalMemoryHandleTypeFlags operator|( ExternalMemoryHandleTypeFlagBits bit0, ExternalMemoryHandleTypeFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ExternalMemoryHandleTypeFlags operator|( ExternalMemoryHandleTypeFlagBits bit0, ExternalMemoryHandleTypeFlagBits bit1 )
   {
     return ExternalMemoryHandleTypeFlags( bit0 ) | bit1;
   }
@@ -7506,7 +7506,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ExternalMemoryHandleTypeFlagsNV = Flags<ExternalMemoryHandleTypeFlagBitsNV, VkExternalMemoryHandleTypeFlagsNV>;
 
-  VULKAN_HPP_INLINE ExternalMemoryHandleTypeFlagsNV operator|( ExternalMemoryHandleTypeFlagBitsNV bit0, ExternalMemoryHandleTypeFlagBitsNV bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ExternalMemoryHandleTypeFlagsNV operator|( ExternalMemoryHandleTypeFlagBitsNV bit0, ExternalMemoryHandleTypeFlagBitsNV bit1 )
   {
     return ExternalMemoryHandleTypeFlagsNV( bit0 ) | bit1;
   }
@@ -7556,7 +7556,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ExternalSemaphoreFeatureFlags = Flags<ExternalSemaphoreFeatureFlagBits, VkExternalSemaphoreFeatureFlags>;
 
-  VULKAN_HPP_INLINE ExternalSemaphoreFeatureFlags operator|( ExternalSemaphoreFeatureFlagBits bit0, ExternalSemaphoreFeatureFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ExternalSemaphoreFeatureFlags operator|( ExternalSemaphoreFeatureFlagBits bit0, ExternalSemaphoreFeatureFlagBits bit1 )
   {
     return ExternalSemaphoreFeatureFlags( bit0 ) | bit1;
   }
@@ -7615,7 +7615,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ExternalSemaphoreHandleTypeFlags = Flags<ExternalSemaphoreHandleTypeFlagBits, VkExternalSemaphoreHandleTypeFlags>;
 
-  VULKAN_HPP_INLINE ExternalSemaphoreHandleTypeFlags operator|( ExternalSemaphoreHandleTypeFlagBits bit0, ExternalSemaphoreHandleTypeFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ExternalSemaphoreHandleTypeFlags operator|( ExternalSemaphoreHandleTypeFlagBits bit0, ExternalSemaphoreHandleTypeFlagBits bit1 )
   {
     return ExternalSemaphoreHandleTypeFlags( bit0 ) | bit1;
   }
@@ -7664,7 +7664,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using FenceCreateFlags = Flags<FenceCreateFlagBits, VkFenceCreateFlags>;
 
-  VULKAN_HPP_INLINE FenceCreateFlags operator|( FenceCreateFlagBits bit0, FenceCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR FenceCreateFlags operator|( FenceCreateFlagBits bit0, FenceCreateFlagBits bit1 )
   {
     return FenceCreateFlags( bit0 ) | bit1;
   }
@@ -7708,7 +7708,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using FenceImportFlags = Flags<FenceImportFlagBits, VkFenceImportFlags>;
 
-  VULKAN_HPP_INLINE FenceImportFlags operator|( FenceImportFlagBits bit0, FenceImportFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR FenceImportFlags operator|( FenceImportFlagBits bit0, FenceImportFlagBits bit1 )
   {
     return FenceImportFlags( bit0 ) | bit1;
   }
@@ -7811,7 +7811,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using FormatFeatureFlags = Flags<FormatFeatureFlagBits, VkFormatFeatureFlags>;
 
-  VULKAN_HPP_INLINE FormatFeatureFlags operator|( FormatFeatureFlagBits bit0, FormatFeatureFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR FormatFeatureFlags operator|( FormatFeatureFlagBits bit0, FormatFeatureFlagBits bit1 )
   {
     return FormatFeatureFlags( bit0 ) | bit1;
   }
@@ -7895,7 +7895,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using GeometryFlagsNV = Flags<GeometryFlagBitsNV, VkGeometryFlagsNV>;
 
-  VULKAN_HPP_INLINE GeometryFlagsNV operator|( GeometryFlagBitsNV bit0, GeometryFlagBitsNV bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR GeometryFlagsNV operator|( GeometryFlagBitsNV bit0, GeometryFlagBitsNV bit1 )
   {
     return GeometryFlagsNV( bit0 ) | bit1;
   }
@@ -7945,7 +7945,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using GeometryInstanceFlagsNV = Flags<GeometryInstanceFlagBitsNV, VkGeometryInstanceFlagsNV>;
 
-  VULKAN_HPP_INLINE GeometryInstanceFlagsNV operator|( GeometryInstanceFlagBitsNV bit0, GeometryInstanceFlagBitsNV bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR GeometryInstanceFlagsNV operator|( GeometryInstanceFlagBitsNV bit0, GeometryInstanceFlagBitsNV bit1 )
   {
     return GeometryInstanceFlagsNV( bit0 ) | bit1;
   }
@@ -8046,7 +8046,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ImageAspectFlags = Flags<ImageAspectFlagBits, VkImageAspectFlags>;
 
-  VULKAN_HPP_INLINE ImageAspectFlags operator|( ImageAspectFlagBits bit0, ImageAspectFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ImageAspectFlags operator|( ImageAspectFlagBits bit0, ImageAspectFlagBits bit1 )
   {
     return ImageAspectFlags( bit0 ) | bit1;
   }
@@ -8133,7 +8133,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ImageCreateFlags = Flags<ImageCreateFlagBits, VkImageCreateFlags>;
 
-  VULKAN_HPP_INLINE ImageCreateFlags operator|( ImageCreateFlagBits bit0, ImageCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ImageCreateFlags operator|( ImageCreateFlagBits bit0, ImageCreateFlagBits bit1 )
   {
     return ImageCreateFlags( bit0 ) | bit1;
   }
@@ -8225,7 +8225,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ImageUsageFlags = Flags<ImageUsageFlagBits, VkImageUsageFlags>;
 
-  VULKAN_HPP_INLINE ImageUsageFlags operator|( ImageUsageFlagBits bit0, ImageUsageFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ImageUsageFlags operator|( ImageUsageFlagBits bit0, ImageUsageFlagBits bit1 )
   {
     return ImageUsageFlags( bit0 ) | bit1;
   }
@@ -8277,7 +8277,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ImageViewCreateFlags = Flags<ImageViewCreateFlagBits, VkImageViewCreateFlags>;
 
-  VULKAN_HPP_INLINE ImageViewCreateFlags operator|( ImageViewCreateFlagBits bit0, ImageViewCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ImageViewCreateFlags operator|( ImageViewCreateFlagBits bit0, ImageViewCreateFlagBits bit1 )
   {
     return ImageViewCreateFlags( bit0 ) | bit1;
   }
@@ -8326,7 +8326,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using IndirectCommandsLayoutUsageFlagsNVX = Flags<IndirectCommandsLayoutUsageFlagBitsNVX, VkIndirectCommandsLayoutUsageFlagsNVX>;
 
-  VULKAN_HPP_INLINE IndirectCommandsLayoutUsageFlagsNVX operator|( IndirectCommandsLayoutUsageFlagBitsNVX bit0, IndirectCommandsLayoutUsageFlagBitsNVX bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR IndirectCommandsLayoutUsageFlagsNVX operator|( IndirectCommandsLayoutUsageFlagBitsNVX bit0, IndirectCommandsLayoutUsageFlagBitsNVX bit1 )
   {
     return IndirectCommandsLayoutUsageFlagsNVX( bit0 ) | bit1;
   }
@@ -8405,7 +8405,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using MemoryAllocateFlags = Flags<MemoryAllocateFlagBits, VkMemoryAllocateFlags>;
 
-  VULKAN_HPP_INLINE MemoryAllocateFlags operator|( MemoryAllocateFlagBits bit0, MemoryAllocateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR MemoryAllocateFlags operator|( MemoryAllocateFlagBits bit0, MemoryAllocateFlagBits bit1 )
   {
     return MemoryAllocateFlags( bit0 ) | bit1;
   }
@@ -8453,7 +8453,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using MemoryHeapFlags = Flags<MemoryHeapFlagBits, VkMemoryHeapFlags>;
 
-  VULKAN_HPP_INLINE MemoryHeapFlags operator|( MemoryHeapFlagBits bit0, MemoryHeapFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR MemoryHeapFlags operator|( MemoryHeapFlagBits bit0, MemoryHeapFlagBits bit1 )
   {
     return MemoryHeapFlags( bit0 ) | bit1;
   }
@@ -8522,7 +8522,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using MemoryPropertyFlags = Flags<MemoryPropertyFlagBits, VkMemoryPropertyFlags>;
 
-  VULKAN_HPP_INLINE MemoryPropertyFlags operator|( MemoryPropertyFlagBits bit0, MemoryPropertyFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR MemoryPropertyFlags operator|( MemoryPropertyFlagBits bit0, MemoryPropertyFlagBits bit1 )
   {
     return MemoryPropertyFlags( bit0 ) | bit1;
   }
@@ -8589,7 +8589,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ObjectEntryUsageFlagsNVX = Flags<ObjectEntryUsageFlagBitsNVX, VkObjectEntryUsageFlagsNVX>;
 
-  VULKAN_HPP_INLINE ObjectEntryUsageFlagsNVX operator|( ObjectEntryUsageFlagBitsNVX bit0, ObjectEntryUsageFlagBitsNVX bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ObjectEntryUsageFlagsNVX operator|( ObjectEntryUsageFlagBitsNVX bit0, ObjectEntryUsageFlagBitsNVX bit1 )
   {
     return ObjectEntryUsageFlagsNVX( bit0 ) | bit1;
   }
@@ -8643,7 +8643,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using PeerMemoryFeatureFlags = Flags<PeerMemoryFeatureFlagBits, VkPeerMemoryFeatureFlags>;
 
-  VULKAN_HPP_INLINE PeerMemoryFeatureFlags operator|( PeerMemoryFeatureFlagBits bit0, PeerMemoryFeatureFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR PeerMemoryFeatureFlags operator|( PeerMemoryFeatureFlagBits bit0, PeerMemoryFeatureFlagBits bit1 )
   {
     return PeerMemoryFeatureFlags( bit0 ) | bit1;
   }
@@ -8778,7 +8778,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using PipelineCreateFlags = Flags<PipelineCreateFlagBits, VkPipelineCreateFlags>;
 
-  VULKAN_HPP_INLINE PipelineCreateFlags operator|( PipelineCreateFlagBits bit0, PipelineCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR PipelineCreateFlags operator|( PipelineCreateFlagBits bit0, PipelineCreateFlagBits bit1 )
   {
     return PipelineCreateFlags( bit0 ) | bit1;
   }
@@ -8830,7 +8830,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using PipelineCreationFeedbackFlagsEXT = Flags<PipelineCreationFeedbackFlagBitsEXT, VkPipelineCreationFeedbackFlagsEXT>;
 
-  VULKAN_HPP_INLINE PipelineCreationFeedbackFlagsEXT operator|( PipelineCreationFeedbackFlagBitsEXT bit0, PipelineCreationFeedbackFlagBitsEXT bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR PipelineCreationFeedbackFlagsEXT operator|( PipelineCreationFeedbackFlagBitsEXT bit0, PipelineCreationFeedbackFlagBitsEXT bit1 )
   {
     return PipelineCreationFeedbackFlagsEXT( bit0 ) | bit1;
   }
@@ -9090,7 +9090,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using PipelineStageFlags = Flags<PipelineStageFlagBits, VkPipelineStageFlags>;
 
-  VULKAN_HPP_INLINE PipelineStageFlags operator|( PipelineStageFlagBits bit0, PipelineStageFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR PipelineStageFlags operator|( PipelineStageFlagBits bit0, PipelineStageFlagBits bit1 )
   {
     return PipelineStageFlags( bit0 ) | bit1;
   }
@@ -9218,7 +9218,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using QueryControlFlags = Flags<QueryControlFlagBits, VkQueryControlFlags>;
 
-  VULKAN_HPP_INLINE QueryControlFlags operator|( QueryControlFlagBits bit0, QueryControlFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR QueryControlFlags operator|( QueryControlFlagBits bit0, QueryControlFlagBits bit1 )
   {
     return QueryControlFlags( bit0 ) | bit1;
   }
@@ -9281,7 +9281,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using QueryPipelineStatisticFlags = Flags<QueryPipelineStatisticFlagBits, VkQueryPipelineStatisticFlags>;
 
-  VULKAN_HPP_INLINE QueryPipelineStatisticFlags operator|( QueryPipelineStatisticFlagBits bit0, QueryPipelineStatisticFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR QueryPipelineStatisticFlags operator|( QueryPipelineStatisticFlagBits bit0, QueryPipelineStatisticFlagBits bit1 )
   {
     return QueryPipelineStatisticFlags( bit0 ) | bit1;
   }
@@ -9355,7 +9355,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using QueryResultFlags = Flags<QueryResultFlagBits, VkQueryResultFlags>;
 
-  VULKAN_HPP_INLINE QueryResultFlags operator|( QueryResultFlagBits bit0, QueryResultFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR QueryResultFlags operator|( QueryResultFlagBits bit0, QueryResultFlagBits bit1 )
   {
     return QueryResultFlags( bit0 ) | bit1;
   }
@@ -9409,7 +9409,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using QueueFlags = Flags<QueueFlagBits, VkQueueFlags>;
 
-  VULKAN_HPP_INLINE QueueFlags operator|( QueueFlagBits bit0, QueueFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR QueueFlags operator|( QueueFlagBits bit0, QueueFlagBits bit1 )
   {
     return QueueFlags( bit0 ) | bit1;
   }
@@ -9479,7 +9479,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ResolveModeFlagsKHR = Flags<ResolveModeFlagBitsKHR, VkResolveModeFlagsKHR>;
 
-  VULKAN_HPP_INLINE ResolveModeFlagsKHR operator|( ResolveModeFlagBitsKHR bit0, ResolveModeFlagBitsKHR bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ResolveModeFlagsKHR operator|( ResolveModeFlagBitsKHR bit0, ResolveModeFlagBitsKHR bit1 )
   {
     return ResolveModeFlagsKHR( bit0 ) | bit1;
   }
@@ -9538,7 +9538,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SampleCountFlags = Flags<SampleCountFlagBits, VkSampleCountFlags>;
 
-  VULKAN_HPP_INLINE SampleCountFlags operator|( SampleCountFlagBits bit0, SampleCountFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SampleCountFlags operator|( SampleCountFlagBits bit0, SampleCountFlagBits bit1 )
   {
     return SampleCountFlags( bit0 ) | bit1;
   }
@@ -9589,7 +9589,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SamplerCreateFlags = Flags<SamplerCreateFlagBits, VkSamplerCreateFlags>;
 
-  VULKAN_HPP_INLINE SamplerCreateFlags operator|( SamplerCreateFlagBits bit0, SamplerCreateFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SamplerCreateFlags operator|( SamplerCreateFlagBits bit0, SamplerCreateFlagBits bit1 )
   {
     return SamplerCreateFlags( bit0 ) | bit1;
   }
@@ -9649,7 +9649,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SemaphoreImportFlags = Flags<SemaphoreImportFlagBits, VkSemaphoreImportFlags>;
 
-  VULKAN_HPP_INLINE SemaphoreImportFlags operator|( SemaphoreImportFlagBits bit0, SemaphoreImportFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SemaphoreImportFlags operator|( SemaphoreImportFlagBits bit0, SemaphoreImportFlagBits bit1 )
   {
     return SemaphoreImportFlags( bit0 ) | bit1;
   }
@@ -9739,7 +9739,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using ShaderStageFlags = Flags<ShaderStageFlagBits, VkShaderStageFlags>;
 
-  VULKAN_HPP_INLINE ShaderStageFlags operator|( ShaderStageFlagBits bit0, ShaderStageFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR ShaderStageFlags operator|( ShaderStageFlagBits bit0, ShaderStageFlagBits bit1 )
   {
     return ShaderStageFlags( bit0 ) | bit1;
   }
@@ -9801,7 +9801,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SparseImageFormatFlags = Flags<SparseImageFormatFlagBits, VkSparseImageFormatFlags>;
 
-  VULKAN_HPP_INLINE SparseImageFormatFlags operator|( SparseImageFormatFlagBits bit0, SparseImageFormatFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SparseImageFormatFlags operator|( SparseImageFormatFlagBits bit0, SparseImageFormatFlagBits bit1 )
   {
     return SparseImageFormatFlags( bit0 ) | bit1;
   }
@@ -9846,7 +9846,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SparseMemoryBindFlags = Flags<SparseMemoryBindFlagBits, VkSparseMemoryBindFlags>;
 
-  VULKAN_HPP_INLINE SparseMemoryBindFlags operator|( SparseMemoryBindFlagBits bit0, SparseMemoryBindFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SparseMemoryBindFlags operator|( SparseMemoryBindFlagBits bit0, SparseMemoryBindFlagBits bit1 )
   {
     return SparseMemoryBindFlags( bit0 ) | bit1;
   }
@@ -9893,7 +9893,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using StencilFaceFlags = Flags<StencilFaceFlagBits, VkStencilFaceFlags>;
 
-  VULKAN_HPP_INLINE StencilFaceFlags operator|( StencilFaceFlagBits bit0, StencilFaceFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR StencilFaceFlags operator|( StencilFaceFlagBits bit0, StencilFaceFlagBits bit1 )
   {
     return StencilFaceFlags( bit0 ) | bit1;
   }
@@ -9971,7 +9971,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SubgroupFeatureFlags = Flags<SubgroupFeatureFlagBits, VkSubgroupFeatureFlags>;
 
-  VULKAN_HPP_INLINE SubgroupFeatureFlags operator|( SubgroupFeatureFlagBits bit0, SubgroupFeatureFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SubgroupFeatureFlags operator|( SubgroupFeatureFlagBits bit0, SubgroupFeatureFlagBits bit1 )
   {
     return SubgroupFeatureFlags( bit0 ) | bit1;
   }
@@ -10024,7 +10024,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SubpassDescriptionFlags = Flags<SubpassDescriptionFlagBits, VkSubpassDescriptionFlags>;
 
-  VULKAN_HPP_INLINE SubpassDescriptionFlags operator|( SubpassDescriptionFlagBits bit0, SubpassDescriptionFlagBits bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SubpassDescriptionFlags operator|( SubpassDescriptionFlagBits bit0, SubpassDescriptionFlagBits bit1 )
   {
     return SubpassDescriptionFlags( bit0 ) | bit1;
   }
@@ -10068,7 +10068,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SurfaceCounterFlagsEXT = Flags<SurfaceCounterFlagBitsEXT, VkSurfaceCounterFlagsEXT>;
 
-  VULKAN_HPP_INLINE SurfaceCounterFlagsEXT operator|( SurfaceCounterFlagBitsEXT bit0, SurfaceCounterFlagBitsEXT bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SurfaceCounterFlagsEXT operator|( SurfaceCounterFlagBitsEXT bit0, SurfaceCounterFlagBitsEXT bit1 )
   {
     return SurfaceCounterFlagsEXT( bit0 ) | bit1;
   }
@@ -10127,7 +10127,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SurfaceTransformFlagsKHR = Flags<SurfaceTransformFlagBitsKHR, VkSurfaceTransformFlagsKHR>;
 
-  VULKAN_HPP_INLINE SurfaceTransformFlagsKHR operator|( SurfaceTransformFlagBitsKHR bit0, SurfaceTransformFlagBitsKHR bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SurfaceTransformFlagsKHR operator|( SurfaceTransformFlagBitsKHR bit0, SurfaceTransformFlagBitsKHR bit1 )
   {
     return SurfaceTransformFlagsKHR( bit0 ) | bit1;
   }
@@ -10182,7 +10182,7 @@ namespace VULKAN_HPP_NAMESPACE
 
   using SwapchainCreateFlagsKHR = Flags<SwapchainCreateFlagBitsKHR, VkSwapchainCreateFlagsKHR>;
 
-  VULKAN_HPP_INLINE SwapchainCreateFlagsKHR operator|( SwapchainCreateFlagBitsKHR bit0, SwapchainCreateFlagBitsKHR bit1 )
+  VULKAN_HPP_INLINE VULKAN_HPP_CONSTEXPR SwapchainCreateFlagsKHR operator|( SwapchainCreateFlagBitsKHR bit0, SwapchainCreateFlagBitsKHR bit1 )
   {
     return SwapchainCreateFlagsKHR( bit0 ) | bit1;
   }
